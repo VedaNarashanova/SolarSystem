@@ -26,6 +26,8 @@ const marsTexture = textureLoader.load("/textures/2k_mars.jpg");
 marsTexture.colorSpace = THREE.SRGBColorSpace
 const moonTexture = textureLoader.load("/textures/2k_moon.jpg");
 moonTexture.colorSpace = THREE.SRGBColorSpace
+const JupiterTexture=textureLoader.load("/textures/2k_jupiter.jpg")
+JupiterTexture.colorSpace=THREE.SRGBColorSpace
 
 const backgroundCubemap = cubeTextureLoader
 .load( [
@@ -55,7 +57,9 @@ const marsMaterial = new THREE.MeshStandardMaterial({
 const moonMaterial = new THREE.MeshStandardMaterial({
   map: moonTexture,
 });
-
+const jupiterMaterial=new THREE.MeshStandardMaterial({
+  map:JupiterTexture
+})
 // add stuff here
 const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
 const sunMaterial = new THREE.MeshBasicMaterial({
@@ -125,7 +129,7 @@ const planets = [
     radius: 2.0,
     distance: 40,
     speed: 0.002,
-    material: marsMaterial,
+    material: jupiterMaterial,
     moons: [
       {
         name: "Europa",
